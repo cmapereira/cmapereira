@@ -1,0 +1,210 @@
+//variables
+$dkgray:#1a1a1a;
+$mdgray:#4d4d4d;
+$ltgreen:#e1f9f6;
+$green:#00a99d;
+$orange:#fbb03b;
+$blue:#00ffff;
+$bg: #f7fffb;
+
+//generic styles and classes
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: $dkgray;
+    
+}
+
+html{
+    background: $bg;
+}
+
+body{
+    max-width: 1200px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0 0 8px $dkgray;
+}
+
+.base-section-title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+
+    span{
+        color: $orange;
+    }
+}
+
+.base-mtop--negative50{
+    margin-top: -50px;
+}
+
+.base-processa {
+    width: 100%;
+    height: 25vh; 
+    margin: 25vh auto;
+    padding: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    color: white;
+    background-color: #212121;
+
+    a {
+        text-decoration: none;
+        color: white
+    }
+}
+
+//break points mixins
+@mixin large{
+    @media screen and(min-width: 1200px){
+        @content;
+    }
+}
+
+@mixin medium-large{
+    @media screen and(min-width: 960px){
+        @content;
+    }
+}
+
+@mixin medium{
+    @media screen and (min-width: 760px){
+        @content;
+    }
+}
+
+
+//flexbox mixin
+@mixin flexcenter($direction, $justify){
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+//extendable classes
+.base-background{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.base-bordershadow{
+    border: 1px solid #fff;
+    box-shadow: 0 0 5px $mdgray;
+}
+
+.base-bar{
+    width: 90%;
+    margin: 0 auto;
+    background: $dkgray;
+    height: 10px;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 17px;
+
+    @include medium-large{
+        width: 60%;
+    }
+}
+
+.base-barlevel{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    //width: 90%;
+    height: 10px;
+    background-image: linear-gradient(to right, $orange, $blue);
+    border-radius: 4px;
+}
+
+.base-animated--properties{
+    animation-duration: 1.8s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+}
+
+//keyframes
+.base-html-animated{
+
+    @keyframes barhtml{
+        from {width: 0%;}
+        to {width: 95%;}
+    }
+    @extend .base-animated--properties;
+}
+
+.base-css-animated{
+
+    @keyframes barcss{
+        from {width: 0%;}
+        to {width: 95%;}
+    }
+    @extend .base-animated--properties;
+}
+
+.base-javascript-animated{
+
+    @keyframes barjavascript{
+        from {width: 0%;}
+        to {width: 80%;}
+    }
+    @extend .base-animated--properties;
+}
+
+.base-jquery-animated{
+
+    @keyframes barjquery{
+        from {width: 0%;}
+        to {width: 80%;}
+    }
+    @extend .base-animated--properties;
+}
+
+.base-bootstrap-animated{
+
+    @keyframes barbootstrap{
+        from {width: 0%;}
+        to {width: 80%;}
+    }
+    @extend .base-animated--properties;
+}
+
+
+.base-photoshop-animated{
+
+    @keyframes barphotoshop{
+        from {width: 0%;}
+        to {width: 50%;}
+    }
+    @extend .base-animated--properties;
+}
+
+.base-illustrator-animated{
+
+    @keyframes barillustrator{
+        from {width: 0%;}
+        to {width: 70%;}
+    }
+    @extend .base-animated--properties;
+}
+
+//js classes
+.base-js-hide{
+    display: none;
+}
+

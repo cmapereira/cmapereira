@@ -1,0 +1,75 @@
+.bestcode{
+    margin-top: -10px;
+
+    &_tools{
+        width: 100%;
+        height: 230px;
+        margin-top: 60px;
+        background-image: url(../img/wireframe.png);
+        @extend .base-background; 
+        display: flex;
+        @include flexcenter(row, space-around);
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        @include medium{
+            height: 400px;
+        }
+
+        &-title{
+            width: 100%;
+            height: auto;
+            text-align: center;
+
+            @include medium{
+                font-size: 1.8rem;
+            }
+        }
+
+        ul{
+            list-style: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+
+            @include medium{
+                font-size: 2.5rem;
+            }
+            
+
+            li{
+                line-height: 2.5rem;
+
+                @include medium{
+                    line-height: 3.5rem;
+                }
+
+                @include medium-large{
+                    line-height: 4rem;
+                }
+            }
+        }
+        
+    }
+
+    &_text{
+        p{
+            padding: 0 15px;
+            font-size: 1.1rem;
+            text-align: justify;
+            font-weight: 600;
+
+            @include medium{
+                font-size: 1.6rem;
+                padding: 0 45px;
+                line-height: 2.4rem;
+            }
+
+            @include medium-large{
+                font-size: 1.8rem;
+                padding: 0 95px;
+            }
+        }
+    }
+}

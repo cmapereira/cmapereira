@@ -1,0 +1,411 @@
+.menu{
+    width: 60%;
+    height: 60px;
+    background-image: linear-gradient(to left, $blue, $green);
+    line-height: 60px;
+    position: relative;
+
+    @include large{
+        width: 50%;
+    }
+
+    &_p{
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-left: 5px;
+
+        @include medium{
+            font-size: 1.1rem;
+            margin-left: 15px;
+        }
+    }
+
+    &_button{
+        width: 150%;
+        text-align: end;
+        color: $orange;
+        padding-right: 5px;
+        height: 40px;
+        line-height: 40px;
+        background: transparent;
+        border: 2px solid $dkgray;
+        border-left: none;
+        font-size: .9rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        &::after{
+            font-family: "Font Awesome 5 Free";
+            font-size: .8rem;
+            content: ' \f103';
+
+            @include medium{
+                font-size: 1rem;
+            }
+        }
+
+        &.isopen::after{
+            font-family: "Font Awesome 5 Free";
+            content: ' \f102';
+        }
+
+        @include medium{
+            font-size: 1.4rem;
+        }
+
+        @include large{
+            width: 130%;
+        }
+    }
+
+    :hover{
+        color:$dkgray;
+    }
+
+    &_item{
+        @include flexcenter(row, space-around);
+        flex-wrap: wrap;
+        height: auto;
+        
+        //about section
+
+        &-about--img{
+            width: 90%;
+            margin: 15px auto 0;
+            background-color: $dkgray;
+
+           @include medium{
+                width: 47.5%;
+            }
+        }
+
+        &-text{
+            width: 90%;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 20px;
+
+            ul{
+                color: $dkgray;
+                list-style: none;
+                margin-left: -20px;
+
+                li{
+                    line-height: 30px;
+                    font-size: 14px;
+
+                    @include medium{
+                        font-size: 1.2rem;
+                    }
+
+                    i{
+                        font-size: 16px;
+                        margin-right: 5px;
+                        color: $green;
+
+                        @include medium{
+                            font-size: 25px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            @include medium{
+                width: 47.5%;
+                line-height: 1.8rem;
+            }
+
+            @include medium-large{
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+
+        //skills section
+
+        &-skills--text{
+            width: 90%;
+            margin: 0 auto;
+            font-weight: bold;
+            margin-bottom: -12px;
+
+            @include medium-large{
+                width: 60%;
+            }
+        }
+
+        &-skills--barhtml5{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barhtml;
+                @extend .base-barlevel;
+                @extend .base-html-animated;
+            }
+        }
+
+        &-skills--barcss3{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barcss;
+                @extend .base-barlevel;
+                @extend .base-css-animated;
+            }
+        }
+
+        &-skills--barjavascript{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barjavascript;
+                @extend .base-barlevel;
+                @extend .base-javascript-animated;
+            }
+        }
+
+        &-skills--barjquery{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barjquery;
+                @extend .base-barlevel;
+                @extend .base-jquery-animated;
+            }
+        }
+
+        &-skills--barbootstrap{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barbootstrap;
+                @extend .base-barlevel;
+                @extend .base-bootstrap-animated;
+            }
+        }
+
+        &-skills--barphotoshop{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barphotoshop;
+                @extend .base-barlevel;
+                @extend .base-photoshop-animated;
+            }
+        }
+
+        &-skills--barillustrator{
+            @extend .base-bar;
+
+            &::before{
+                animation-name: barillustrator;
+                @extend .base-barlevel;
+                @extend .base-illustrator-animated;
+            }
+        }
+
+        //Portfolio Sections
+        
+        &-portfolio--img{
+            width: 300px;
+            height: 203px;
+            margin: 25px auto 0;
+            position: relative;
+            @extend .base-bordershadow;
+
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @include medium{
+                float: left;
+                margin-bottom: 15px;
+            }
+
+            &-solaris{
+                background-image: url(../img/solaris.jpg);
+                @extend .base-background;
+            }
+
+            &-mgame{
+                background-image: url(../img/mgame.jpg);
+                @extend .base-background;
+            }
+
+            &-audiobook{
+                background-image: url(../img/audiobook.jpg);
+                @extend .base-background;
+            }
+
+            &-sigeo{
+                background-image: url(../img/sigeo.jpg);
+                @extend .base-background;
+            }
+
+            &-oleoessencial{
+                background-image: url(../img/oleoessencial.jpg);
+                @extend .base-background;
+            }
+
+            &-dsantana{
+                background-image: url(../img/dsantana.jpg);
+                @extend .base-background;
+            }
+
+            &-hidromapper{
+                background-image: url(../img/hidromapper.jpg);
+                @extend .base-background;
+            }
+
+            &-gisa{
+                background-image: url(../img/gisa.jpg);
+                @extend .base-background;
+            }
+
+            &-logooil{
+                background-image: url(../img/logooleo.jpg);
+                @extend .base-background;
+            }
+        }
+
+        &-portfolio--text{
+            width: 90%;
+            margin: 15px auto 0;
+            text-align: justify;
+
+            @include medium{
+                width: 50%;
+                float: left;
+                font-size: 1.4rem;
+            }
+
+            a{
+                color: $dkgray;
+                font-weight: bold;
+            }
+        }
+
+        //services section
+
+        &-services{
+            width: 90%;
+            @include flexcenter(row, space-around);
+            flex-wrap: wrap;
+
+            @include medium{
+                width: 70%;
+            }
+
+            @include medium-large{
+                width: 50%;
+            }
+        }
+
+        &-services--icon{
+            width: 20%;
+            text-align: center;
+
+            i{
+                font-size: 30px;
+                color: $green;
+
+                @include medium{
+                    font-size: 50px;
+                }
+            }
+        }
+
+        &-services--text{
+            width: 80%;
+
+            @include medium{
+                font-size: 30px;
+            }
+        }
+
+        //contact section
+
+        &-contact--form{
+            width: 90%;
+            margin-top: 25px;
+            label{
+                font-weight: bold;
+                line-height: 25px;
+            }
+
+            @include medium{
+                width: 70%;
+            }
+
+            @include medium-large{
+                width: 50%;
+            }
+
+            input[type="text"], [type="email"]{
+                line-height: 25px;
+                width: 95%;
+                padding-left: 10px;
+                border: 2px solid $dkgray;
+                border-radius: 5px;
+                margin-bottom: 15px;
+
+                &:focus{
+                    background: $ltgreen;
+                    outline: none;
+                }
+
+                @include medium{
+                    line-height: 35px;
+                }
+            }
+
+            textarea{
+                width: 95%;
+                border: 2px solid $dkgray;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                padding: 5px;
+
+                &:focus{
+                    background: $ltgreen;
+                    outline: none;
+                }
+            }
+
+            input[type="submit"]{
+                width: 50%;
+                line-height: 40px;
+                background: $green;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 1px;
+
+                &:hover{
+                    background: $orange;
+                    color: $dkgray;
+                }
+            }
+        }  
+    }
+}
+
+#list-title{
+    font-weight: bold;
+    margin-bottom: 15px;
+}
